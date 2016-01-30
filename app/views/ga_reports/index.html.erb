@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ga Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>date</th>
+      <th>client_name</th>      
+      <th>userType</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ga_reports.each do |ga_report| %>
+      <tr>
+        <td><%= ga_report.date %></td>
+        <td><%= ga_report.client_name %></td>
+        <td><%= ga_report.userType %></td>
+        <td><%= link_to 'Show', ga_report %></td>
+        <td><%= link_to 'Edit', edit_ga_report_path(ga_report) %></td>
+        <td><%= link_to 'Destroy', ga_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ga report', new_ga_report_path %>

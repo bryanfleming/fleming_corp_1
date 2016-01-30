@@ -1,0 +1,17 @@
+<%= form_for(@ga_report) do |f| %>
+  <% if @ga_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ga_report.errors.count, "error") %> prohibited this ga_report from being saved:</h2>
+
+      <ul>
+      <% @ga_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
